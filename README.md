@@ -1,62 +1,22 @@
-# Vue 3, TypeScript & Tailwind CSS Starter
+# Todo List App (Vue 3 + TypeScript)
 
-> A simple, Vue 3 starter with TypeScript support
+這是一個使用 **Vue 3** 搭配 **TypeScript** 所開發的簡易 Todo List 前端應用程式，目的是熟悉 Vue 的元件化開發流程、TypeScript 型別設計，以及為後續串接後端做準備。
 
-[Demo/Installation](https://vue3-typescript-tailwind-starter.vercel.app/)
+## 🔧 技術棧
 
-## Features
+- [Vue 3](https://vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) 作為開發與建置工具
+- [Tailwind CSS](https://tailwindcss.com/) 用於 UI 樣式
+- Composition API
 
-- Vue 3
-- TypeScript
-- Tailwind CSS
-- Simple store with global state
-- Vue Router
-- ESLint
+## ✅ 目前功能
 
-## Project setup and usage
+- [O] 新增代辦事項
+- [ ] 刪除代辦事項
+- [ ] 編輯代辦事項
+- [ ] 切換完成 / 未完成狀態
+- [ ] 使用 localStorage 儲存清單
+- [ ] 串接後端 API（未來規劃）
 
-Install dependencies:
-
-```
-npm install
-```
-
-Run development server:
-
-```
-npm run dev
-```
-
-Build for produciton:
-
-```
-npm run build
-```
-
-Run ESLint:
-
-```
-npm run lint
-```
-
-Lint and fix:
-
-```
-npm run lint:fix
-```
-
-## Contributing
-
-Contributions, feedback and issues are welcome. Feel free to fork, comment, critique, or submit a pull request.
-
-## Acknowledgements
-
-This repo was adapted from [Unihen](https://twitter.com/uninen)'s [vite-ts-tailwind-starter](https://github.com/Uninen/vite-ts-tailwind-starter) project.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Follow [@vincentdoerig](https://twitter.com/vincentdoerig) on Twitter.
+## 📸 預覽畫面
