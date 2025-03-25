@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import type { Todo } from '@/types/Todo'
 
 const LOCAL_STORAGE_KEY = 'todo-list'
@@ -8,6 +8,7 @@ export const useTodoStore = defineStore('todo', () => {
 
   const saved = localStorage.getItem(LOCAL_STORAGE_KEY)
   const todos = ref<Todo[]>(saved ? JSON.parse(saved) : [])
+  const filter = ref<'all'| 'active' | 'completed' >('all')
 
   watch (
     todos,
@@ -30,6 +31,20 @@ export const useTodoStore = defineStore('todo', () => {
     todos.value = todos.value.filter(todo => todo.id !== id)
   }
 
-  return { todos, addTodo, toggleTodo, removeTodo }
+  function clearCompleted(){
+    todos.value = todos.value.filter(todo => !todo.completed)
+  }
+
+  // 新增篩選後的 todos（computed）
+const filteredTodos = computed(() => {
+  if (filter.value === 'active') {
+    return todos.value.filter(todo => !todo.completed)
+  } else if (filter.value === 'completed') {
+    return todos.value.filter(todo => todo.completed)
+  }
+  return todos.value
+})
+
+  return { todos, addTodo, toggleTodo, removeTodo, clearCompleted, filter, filteredTodos }
 })
 
