@@ -37,6 +37,13 @@
             </span>
           </template>
         </label>
+        <!-- 顯示編輯時間 -->
+        <small
+          v-if="todo.updatedAt"
+          class="text-xs text-gray-400 pl-6"
+        >
+          編輯於：{{ todo.updatedAt }}
+        </small>
         <button
           class="text-gray-400 hover:text-red-500"
           @click="todoStore.removeTodo(todo.id)"
@@ -93,7 +100,19 @@ function saveEdit(todoId: number) {
   const text = editText.value.trim()
   if (text) {
     const todo = todoStore.todos.find(t => t.id === todoId)
-    if (todo) todo.text = text
+    if (todo) {
+      todo.text = text
+
+// 加入當天日期
+      const today =new Date()
+      todo.updatedAt = today.toLocaleDateString(
+        'zh-TW',{
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        },
+      )
+    }
   }
   editingId.value = null
   editText.value = ''
