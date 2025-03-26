@@ -34,6 +34,7 @@
 import TodoInput from './components/TodoInput.vue'
 import TodoList from './components/TodoList.vue'
 import { useTodoStore } from '@/store/useTodoStore'
+import { onMounted } from 'vue'
 
 
 const todoStore = useTodoStore()
@@ -48,5 +49,9 @@ function buttonClass(type: 'all' | 'active' | 'completed') {
       : 'bg-white text-gray-700 border-gray-300 hover:shadow hover:bg-gray-50',
   ].join(' ')
 }
+
+onMounted(() => {
+  todoStore.fetchTodos()
+})
 
 </script>
