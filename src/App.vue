@@ -1,9 +1,11 @@
 <template>
-  <div class="min-h-screen bg-lime-50 flex items-center justify-center">
-    <WeatherSearch />
+  <div class="min-h-screen bg-stone-50 text-stone-800">
+    <Navigation />
+    <RouterView />
   </div>
 </template>
 
 <script setup>
-import WeatherSearch from './components/WeatherSearch.vue'
+import { RouterView } from 'vue-router'
+import Navigation from '@/components/Navigation.vue'
 </script>
