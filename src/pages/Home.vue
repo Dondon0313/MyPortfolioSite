@@ -1,12 +1,5 @@
 <template>
   <div class="p-8 text-center">
-    <button
-      class="absolute top-4 right-4 px-3 py-1 rounded text-sm bg-stone-300 dark:bg-stone-700 text-black dark:text-white shadow"
-      @click="toggleDark"
-    >
-      切換 {{ isDark ? '亮' : '暗' }}模式
-    </button>
-
     <h1 class="text-3xl font-bold mb-4">
       👋 歡迎來到我的個人網站
     </h1>
@@ -18,7 +11,7 @@
       <img
         src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"
         alt="頭像"
-        class="w-24 h-24 mx-auto rounded-full mb-4"
+        class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-white dark:border-stone-700"
       >
       <h2 class="text-xl font-semibold dark:text-white">
         Dondon0313
@@ -43,17 +36,4 @@
 
 <script setup>
 defineOptions({ name: 'HomePage' })
-
-import { ref, onMounted } from 'vue'
-
-const isDark = ref(false)
-
-onMounted(() => {
-  isDark.value = document.documentElement.classList.contains('dark')
-})
-
-function toggleDark() {
-  isDark.value = !isDark.value
-  document.documentElement.classList.toggle('dark', isDark.value)
-}
 </script>

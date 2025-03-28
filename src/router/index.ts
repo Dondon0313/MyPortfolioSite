@@ -14,7 +14,8 @@ const routes = [
   // { path: '/projects/todo', component: TodoEmbed },
   // { path: '/projects/weather', component: WeatherEmbed },
   { path: '/blog', component: Blog },
-  { path: '/blog/:id', component: BlogPost },
+  { path: '/blog/:slug', component: BlogPost },
+
 ]
 
 const router = createRouter({
